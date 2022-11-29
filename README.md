@@ -75,6 +75,7 @@ spring.datasource.driver-class-name=org.postgresql.Driver
 # Hibernate ddl auto (create, create-drop, validate, update)
 spring.jpa.hibernate.ddl-auto=create
 spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.globally_quoted_identifiers=true
 ```
 
 Let's break down these properties to better understand what is happening:
@@ -113,6 +114,9 @@ Let's break down these properties to better understand what is happening:
 - The `spring.jpa.properties.hibernate.dialect` is added to define the dialect. In
   this case, we are using PostgreSQL, so we'll specify the dialect to be
   "org.hibernate.dialect.PostgreSQLDialect".
+- The `spring.jpa.properties.hibernate.globally_quoted_identifiers` property can
+  be set to true to globally escape all SQL reserved keywords, such as "order"
+  and "user".
 
 Keep all of this in mind for the next lesson, as we'll go ahead and add this to
 our `application.properties` file then since we can't actually run with this yet
@@ -144,3 +148,4 @@ about how to do in the next lesson.
 - [Common Application Properties](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties.core)
 - [PostgreSQL Driver Connection Information](https://docs.oracle.com/cd/E19509-01/820-3497/agqka/index.html)
 - [Connect to a PostgreSQL Database](https://www.bezkoder.com/spring-boot-postgresql-example/)
+- [How to Escape SQL Reserved Keywords with Spring Boot](https://www.chrouki.com/posts/escape-sql-reserved-keywords-jpa-hibernate/)
