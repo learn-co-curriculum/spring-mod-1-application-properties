@@ -73,7 +73,7 @@ spring.datasource.password=
 spring.datasource.driver-class-name=org.postgresql.Driver
 
 # Hibernate ddl auto (create, create-drop, validate, update)
-spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.hibernate.ddl-auto=create
 spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.PostgreSQLDialect
 ```
 
@@ -106,7 +106,7 @@ Let's break down these properties to better understand what is happening:
   - `validate`: Checks if the entity definitions match an existing table schema.
   - `update`: Does not drop databases. Only updates the table schema.
   - `none`: Does not make any changes to the database.
-  - We will use the `create-drop` value when we first create and persist data.
+  - We will use the `create` value when we first create and persist data.
     Afterwards, we'll switch it to `none` for the read, update, and delete
     operations, as this is a common practice when deploying to a production
     environment.
