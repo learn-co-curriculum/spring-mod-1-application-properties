@@ -98,19 +98,11 @@ Let's break down these properties to better understand what is happening:
   driver name that is needed to connect to PostgresSQL. If we were using another
   DBMS, like MySQL, this would look different.
 - The `spring.jpa.hibernate.ddl-auto` property defines the database initialization
-  behavior. Here are some of the common values:
-  - `create-drop`: This drops all databases and creates new ones from scratch. It
-    drops the database schema when the entity manager is closed using the
-    `entityManager.close()` method.
-  - `create`: It is similar to `create-drop` but it does not drop the database
-    tables when the entity manager is closed.
-  - `validate`: Checks if the entity definitions match an existing table schema.
-  - `update`: Does not drop databases. Only updates the table schema.
-  - `none`: Does not make any changes to the database.
+  behavior. The common values for this property are the same as when we defined it
+  in the persistence.xml file.
   - We will use the `create` value when we first create and persist data.
-    Afterwards, we'll switch it to `none` for the read, update, and delete
-    operations, as this is a common practice when deploying to a production
-    environment.
+    Afterwards, we'll switch it to `update` for the read, update, and delete
+    operations.
 - The `spring.jpa.properties.hibernate.dialect` is added to define the dialect. In
   this case, we are using PostgreSQL, so we'll specify the dialect to be
   "org.hibernate.dialect.PostgreSQLDialect".
