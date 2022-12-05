@@ -69,7 +69,7 @@ Spring Boot application in the `application.properties` file:
 ```properties
 spring.datasource.url= jdbc:postgresql://localhost:5432/sports
 spring.datasource.username= postgres
-spring.datasource.password=
+spring.datasource.password=postgres
 spring.datasource.driver-class-name=org.postgresql.Driver
 
 # Hibernate ddl auto (create, create-drop, validate, update)
@@ -90,8 +90,10 @@ Let's break down these properties to better understand what is happening:
   the database. When we set up and installed Postgres, we chose the default
   username, which is simply just "postgres".
 - The `spring.datasource.password` is the password associated with the login
-  account used to connect to the database. In the case above, it is empty, but you
-  would put the password here so that it can properly connect. For now, we will
+  account used to connect to the database. In the case above, it is set to
+  "postgres", as that is what you most likely used as a password when installing
+  PostgreSQL. If that is not the password you used, then replace this property
+  value with your password you use to connect to PostgreSQL. For now, we will
   put the plain text password. In the next module, we'll learn more about security
   and how we can encrypt this password to be more secure.
 - `spring.datasource.driver-class-name` is "org.postgresql.Driver". This is the
